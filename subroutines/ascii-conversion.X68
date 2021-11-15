@@ -108,22 +108,22 @@ START
 	* ---- CharToInt10 Tests ---- *
 	Print	<* Begin CharToInt10 Tests *>,ENDL
 
-	Print	<* Case 01: 0x00 = FAIL *>,ENDL
+	Print	<* Case 01: 0x00 = ERR *>,ENDL
 	TestRoutine.b CharToInt10,#$0,FAIL
 
-	Print	<* Case 02: 0x2F = FAIL *>,ENDL
+	Print	<* Case 02: 0x2F = ERR *>,ENDL
 	TestRoutine.b CharToInt10,#$2F,FAIL
 
 	Print	<* Case 03: Ox30 = 0x00 *>,ENDL
 	TestRoutine.b CharToInt10,#$30,#$00
 
-	Print	<* Case 04: 0x39 = 0x09 >,ENDL
+	Print	<* Case 04: 0x39 = 0x09 *>,ENDL
 	TestRoutine.b CharToInt10,#$39,#$09
 
-	Print	<* Case 05: 0x3A = FAIL >,ENDL
+	Print	<* Case 05: 0x3A = ERR *>,ENDL
 	TestRoutine.b CharToInt10,#$3A,FAIL
 
-	Print	<* Case 06: 0xFF = FAIL >,ENDL
+	Print	<* Case 06: 0xFF = ERR *>,ENDL
 	TestRoutine.b CharToInt10,#$FF,FAIL
 
 	Print	,ENDL
@@ -131,25 +131,25 @@ START
 	* ---- CharToInt16 Tests ---- *
 	Print   <* Begin CharToInt16 Tests *>,ENDL
 
-	Print	<* Case 01: 0x00 = FAIL *>,ENDL
+	Print	<* Case 01: 0x00 = ERR *>,ENDL
 	TestRoutine.b CharToInt16,#$0,FAIL
 
-	Print	<* Case 02: 0x2F = FAIL *>,ENDL
+	Print	<* Case 02: 0x2F = ERR *>,ENDL
 	TestRoutine.b CharToInt10,#$2F,FAIL
 
 	Print	<* Case 03: Ox30 = 0x00 *>,ENDL
 	TestRoutine.b CharToInt16,#$30,#$00
 
-	Print	<* Case 04: 0x39 = 0x09 >,ENDL
+	Print	<* Case 04: 0x39 = 0x09 *>,ENDL
 	TestRoutine.b CharToInt16,#$39,#$09
 
-	Print	<* Case 05: 0x3A = FAIL >,ENDL
+	Print	<* Case 05: 0x3A = ERR *>,ENDL
 	TestRoutine.b CharToInt16,#$3A,FAIL
 
-	Print	<* Case 06: 0xFF = FAIL >,ENDL
+	Print	<* Case 06: 0xFF = ERR *>,ENDL
 	TestRoutine.b CharToInt16,#$FF,FAIL
 
-	Print	<* Case 07: 0x40 = FAIL *>,ENDL
+	Print	<* Case 07: 0x40 = ERR *>,ENDL
 	TestRoutine.b CharToInt16,#$40,FAIL
 
 	Print	<* Case 08: 0x41 = 0x0A *>,ENDL
@@ -158,10 +158,10 @@ START
 	Print	<* Case 09: 0x46 = 0x0F *>,ENDL
 	TestRoutine.b CharToInt16,#$46,#$0F
 
-	Print	<* Case 10: 0x47 = FAIL *>,ENDL
+	Print	<* Case 10: 0x47 = ERR *>,ENDL
 	TestRoutine.b CharToInt16,#$47,FAIL
 
-	Print	<* Case 11: 0x60 = FAIL *>,ENDL
+	Print	<* Case 11: 0x60 = ERR *>,ENDL
 	TestRoutine.b CharToInt16,#$60,FAIL
 
 	Print	<* Case 12: 0x61 = 0x0A *>,ENDL
@@ -170,7 +170,7 @@ START
 	Print	<* Case 13: 0x66 = 0x0F *>,ENDL
 	TestRoutine.b CharToInt16,#$66,#$0F
 
-	Print	<* Case 14: 0x67 = FAIL  *>,ENDL
+	Print	<* Case 14: 0x67 = ERR  *>,ENDL
 	TestRoutine.b CharToInt16,#$67,FAIL
 
 	Print	,ENDL
@@ -281,6 +281,7 @@ tfail	DC.B	'Test failed',CR,LF,NUL		; pass and fail strings
 tpass	DC.B	'Test passed',CR,LF,NUL
 
 	END		START			; last line of source
+
 
 *~Font name~Courier New~
 *~Font size~10~
